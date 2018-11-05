@@ -2,6 +2,7 @@ class Spaceship extends Floater
 {   
 	Spaceship()
 	{
+		myColor = 255;
 		corners = 4;
 		xCorners = new int[corners];
 		yCorners = new int[corners];
@@ -11,14 +12,14 @@ class Spaceship extends Floater
 		myDirectionX=0;
 		myDirectionY=0; //holds x and y coordinates of the vector for direction of travel   
  		myPointDirection = 0;
-		xCorners[0] = 6;
+		xCorners[0] = 12;
 		yCorners[0] = 0;
 		xCorners[1] = -8;
 		yCorners[1] = 8;
-		xCorners[2] = -8;
-		yCorners[2] = -8;
-		xCorners[3] = -2;
-		yCorners[3] = 0;
+		xCorners[3] = -8;
+		yCorners[3] = -8;
+		xCorners[2] = -2;
+		yCorners[2] = 0;
 
 	}
 public void setX(int x){myCenterX=x;} 
