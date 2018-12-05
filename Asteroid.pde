@@ -1,5 +1,5 @@
 class Asteroid extends Floater
-{   
+{   	
 	Asteroid()
 	{
 		myColor = 255;
@@ -35,4 +35,4 @@ public double getDirectionY(){return myDirectionY;}
 public void setPointDirection(int degrees){myPointDirection=degrees;}  
 public double getPointDirection(){return myPointDirection;}
 }
-
+	
