@@ -1,12 +1,12 @@
 class Asteroid extends Floater
 {   	
+	int rotatespeed;
 	Asteroid()
 	{
 		myColor = 255;
 		corners = 5;
 		xCorners = new int[corners];
 		yCorners = new int[corners];
-		rotatationspeed = 5;
 		myColor = 255;   
 		myCenterX = 400;
 		myCenterY =400; //holds center coordinates   
@@ -23,6 +23,7 @@ class Asteroid extends Floater
 		yCorners[3] = -12;
 		xCorners[4] = -12;
 		yCorners[4] = -12;
+		rotatespeed = ((int)(Math.random()*6)+1);
 
 	}
 public void setX(int x){myCenterX=x;} 
@@ -36,7 +37,7 @@ public double getDirectionY(){return myDirectionY;}
 public void setPointDirection(int degrees){myPointDirection=degrees;}  
 public double getPointDirection(){return myPointDirection;}
 public void move() {
-	turn(rotatationspeed);
+	turn(rotatespeed);
 	super.move();
 	}	
 }
