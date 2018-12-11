@@ -1,5 +1,5 @@
 Spaceship bob = new Spaceship();
-Asteroid rock = new Asteroid();
+Asteroid [] asteroidsarray;
 Star [] shinystars;
 boolean wPressed = false;
 boolean dPressed = false;
@@ -12,14 +12,20 @@ public void setup()
 	for (int i=0;i<100;i++){
 		shinystars[i]=new Star();
 	}	
+	asteroidsarray = new Asteroid[50];
+	for (int i=0;i<50;i++){
+		asteroidsarray[i]=new Asteroid();
+	}
 }
 public void draw() 
 {
 background(4,6,50);
  bob.show(); 
  bob.move();
- rock.show();
- rock.move();
+ for (int i=0; i<asteroidsarray.length; i++){
+ 	asteroidsarray[i].show();
+ 	asteroidsarray[i].move();
+ }
  for (int i=0; i<shinystars.length; i++){
  	shinystars[i].show();
  }

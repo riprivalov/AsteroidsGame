@@ -8,10 +8,10 @@ class Asteroid extends Floater
 		xCorners = new int[corners];
 		yCorners = new int[corners];
 		myColor = 255;   
-		myCenterX = 400;
-		myCenterY =400; //holds center coordinates   
-		myDirectionX=0;
-		myDirectionY=0; //holds x and y coordinates of the vector for direction of travel   
+		myCenterX =((int)(Math.random()*800));
+		myCenterY =((int)(Math.random()*800)); //holds center coordinates   
+		myDirectionX=((Math.random()*6)-3);
+		myDirectionY=((Math.random()*6)-3); //holds x and y coordinates of the vector for direction of travel   
  		myPointDirection = 0;
 		xCorners[0] = -15;
 		yCorners[0] = 3;
