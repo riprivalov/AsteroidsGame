@@ -1,7 +1,7 @@
-class Asteroid extends Floater
+class Bullet extends Floater
 {   	
 	int rotatespeed;
-	Asteroid()
+	Bullet(Spaceship theShip)
 	{
 		myColor = 255;
 		corners = 5;
@@ -12,7 +12,7 @@ class Asteroid extends Floater
 		myCenterY =((int)(Math.random()*800) ); //holds center coordinates   
 		myDirectionX=((Math.random()*6)-3);
 		myDirectionY=((Math.random()*6)-3); //holds x and y coordinates of the vector for direction of travel   
- 		myPointDirection = 0;
+ 		myPointDirection = theShip;
 		xCorners[0] = -15;
 		yCorners[0] = 3;
 		xCorners[1] = 0;
@@ -36,8 +36,3 @@ public void setDirectionY(double y){myDirectionY=y;}
 public double getDirectionY(){return myDirectionY;}   
 public void setPointDirection(int degrees){myPointDirection=degrees;}  
 public double getPointDirection(){return myPointDirection;}
-public void move() {
-	turn(rotatespeed);
-	super.move();
-	}	
-}
