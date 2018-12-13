@@ -1,30 +1,20 @@
 class Bullet extends Floater
 {   	
 	int rotatespeed;
+	double dRadians;
 	Bullet(Spaceship theShip)
 	{
-		myColor = 255;
-		corners = 5;
-		xCorners = new int[corners];
-		yCorners = new int[corners];
-		myColor = 255;   
-		myCenterX =((int)(Math.random()*800));
-		myCenterY =((int)(Math.random()*800) ); //holds center coordinates   
-		myDirectionX=((Math.random()*6)-3);
-		myDirectionY=((Math.random()*6)-3); //holds x and y coordinates of the vector for direction of travel   
- 		myPointDirection = theShip;
-		xCorners[0] = -15;
-		yCorners[0] = 3;
-		xCorners[1] = 0;
-		yCorners[1] = 15;
-		xCorners[2] = 15;
-		yCorners[2] = 3;
-		xCorners[3] = 12;
-		yCorners[3] = -12;
-		xCorners[4] = -12;
-		yCorners[4] = -12;
-		rotatespeed = ((int)(Math.random()*6)+1);
+		myCenterX = theShip.getX();
+		myCenterY = theShip.getY();//holds center coordinates   
+		myDirectionX=5 * Math.cos(dRadians) + theShip.getDirectionX();
+		myDirectionY=5 * Math.cos(dRadians) + theShip.getDirectionY();//holds x and y coordinates of the vector for direction of travel   
+ 		myPointDirection = theShip.getPointDirection();
+ 		dRadians = 	myPointDirection*(Math.PI/180);
 
+	}
+	public void show(){
+		fill(17,221,221);
+		rect((int)myCenterX,(int)myCenterY,20,5,5);
 	}
 public void setX(int x){myCenterX=x;} 
 public int getX(){return (int)myCenterX;}
@@ -36,3 +26,4 @@ public void setDirectionY(double y){myDirectionY=y;}
 public double getDirectionY(){return myDirectionY;}   
 public void setPointDirection(int degrees){myPointDirection=degrees;}  
 public double getPointDirection(){return myPointDirection;}
+}

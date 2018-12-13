@@ -1,10 +1,12 @@
 Spaceship bob = new Spaceship();
 ArrayList <Asteroid> rocks;
+ArrayList <Bullet> bullets;
 Star [] shinystars;
 boolean wPressed = false;
 boolean dPressed = false;
 boolean aPressed = false;
 boolean sPressed = false;
+boolean fPressed = false;
 public void setup() 
 {
 	size(800,800);
@@ -15,6 +17,10 @@ public void setup()
 	rocks = new ArrayList <Asteroid>();
 	for (int i=0;i<50;i++){
 		rocks.add(new Asteroid());
+	}
+	bullets = new ArrayList <Bullet>();
+	if (fPressed = true){
+		bullets.add(new Bullet());
 	}
 }
 public void draw() 
@@ -33,6 +39,7 @@ background(4,6,50);
  if (dPressed) {bob.turn(5);}
  if (aPressed) {bob.turn(-5);}
  if (sPressed) {bob.accelerate(-.5);}
+ if (fPressed) {bullet.show();}
 }
 
 public void keyPressed() {
@@ -56,6 +63,9 @@ public void keyPressed() {
 		bob.setDirectionY(0);
 		bob.setDirectionX(0);
 	}
+	if (key == 'f'){
+		fPressed = true;
+	}
 }
 
 public void keyReleased() {
@@ -71,5 +81,8 @@ public void keyReleased() {
 	}
 	if (key == 's') {
 		sPressed = false;
+	}
+	if (key == 's') {
+		fPressed = false;
 	}
 }
