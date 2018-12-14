@@ -19,9 +19,7 @@ public void setup()
 		rocks.add(new Asteroid());
 	}
 	bullets = new ArrayList <Bullet>();
-	if (fPressed = true){
-		bullets.add(new Bullet());
-	}
+	
 }
 public void draw() 
 {
@@ -39,7 +37,13 @@ background(4,6,50);
  if (dPressed) {bob.turn(5);}
  if (aPressed) {bob.turn(-5);}
  if (sPressed) {bob.accelerate(-.5);}
- if (fPressed) {bullet.show();}
+ for (int i=0; i<bullets.size(); i++){
+ 	bullets.get(i).move();
+ 	bullets.get(i).show(bob);
+ }
+ if (fPressed == true){
+		bullets.add(new Bullet(bob));
+	}
 }
 
 public void keyPressed() {
@@ -82,7 +86,7 @@ public void keyReleased() {
 	if (key == 's') {
 		sPressed = false;
 	}
-	if (key == 's') {
+	if (key == 'f') {
 		fPressed = false;
 	}
 }
