@@ -20,7 +20,7 @@ public void setup()
 	}
 	bullets = new ArrayList <Bullet>();
 	
-}
+}  
 public void draw() 
 {
 background(4,6,50);
@@ -44,6 +44,25 @@ background(4,6,50);
  if (fPressed == true){
 		bullets.add(new Bullet(bob));
 	}
+  for (int i = 0; i < rocks.size(); i++) {
+    rocks.get(i).show();
+    rocks.get(i).move();
+    if (dist(bob.getX(), bob.getY(), rocks.get(i).getX(), rocks.get(i).getY()) < 20) {
+      rocks.remove(i);
+      break;
+    }
+  }
+
+  bob.show();
+  bob.move();
+  for(int i = 0; i < bullets.size(); i++) {
+    for(int z = 0; z < rocks.size(); z++) {
+      if(dist(bullets.get(i).getX(), bullets.get(i).getY(), rocks.get(z).getX(), rocks.get(z).getY()) < 10) {
+          rocks.remove(z);
+          break;
+      }
+    }
+  }
 }
 
 public void keyPressed() {

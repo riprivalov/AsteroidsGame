@@ -14,7 +14,7 @@ class Bullet extends Floater
 	}
 	public void show(Spaceship theShip){
 		fill(17,221,221);
-		rect((int)myCenterX,(int)myCenterY,20,5,5);
+		ellipse((int)myCenterX,(int)myCenterY,15,15);
 		/*
 		fill(17,221,221);     
 	    
